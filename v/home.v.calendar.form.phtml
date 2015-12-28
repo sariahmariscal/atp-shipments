@@ -1,0 +1,68 @@
+<form action="" class="navbar-form navbar-left" role="search" method="GET">
+	<div class="form-group">
+		<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+		<select name="m" id="m" class="form-control" onchange="this.form.submit();">
+<?php
+
+	for ($i=1; $i <= 12; $i++) { 
+
+		if ($i == $mesActual) {
+
+			echo '<option value="' . $i . '" selected>' . $arrayMes[$i] . '</option>';
+
+		}
+
+		else {
+
+			echo '<option value="' . $i . '">' . $arrayMes[$i] . '</option>';
+
+		}
+
+	}
+
+?>
+		</select>
+		<select name="y" id="y" class="form-control" onchange="this.form.submit();">
+<?php
+
+	for ($i=2015; $i <= 2016; $i++) { 
+
+		if ($i == $anoActual) {
+
+			echo '<option value="' . $i . '" selected>' . $i . '</option>';
+
+		}
+
+		else {
+
+			echo '<option value="' . $i . '">' . $i . '</option>';
+
+		}
+
+	}
+
+?>
+		</select>
+		<select name="s" class="form-control" onchange="this.form.submit();">
+<?php
+
+	for ($i=1; $i <= 19; $i++) { 
+
+		if ($i == $sucursalActual) {
+
+			echo '<option value="' . $i . '" selected>' . $arraySucursal[$i] . '</option>';
+
+		}
+
+		else {
+
+			echo '<option value="' . $i . '">' . $arraySucursal[$i] . '</option>';
+
+		}
+
+	}
+
+?>
+		</select>
+	</div>
+</form>
