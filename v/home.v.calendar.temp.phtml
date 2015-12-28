@@ -1,0 +1,97 @@
+<?php
+
+	$sucursalTodas = 'All';
+	$sucursalActual;
+
+?>
+
+<table class="table table-condensed table-bordered">
+	<thead>
+	<tr>
+		<th colspan="7" style="text-transform: uppercase;">
+			<?= $nombreMes ?>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>Domingo</th>
+		<th>Lunes</th>
+		<th>Martes</th>
+		<th>Miércoles</th>
+		<th>Jueves</th>
+		<th>Viernes</th>
+		<th>Sábado</th>
+	</tr>
+	<tr>
+<?php
+	
+	for ($i=0; $i < $calendarConf[0]; $i++) { 
+		echo '<td></td>';
+	}
+
+	for ($i=$calendarConf[1]; $i <= $calendarConf[2]; $i++) { 
+		echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+	}
+	
+?>
+	</tr>
+	<tr>
+<?php
+	
+	for ($i=$calendarConf[3]; $i <= $calendarConf[4]; $i++) { 
+		echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+	}
+	
+?>
+	</tr>
+	<tr>
+<?php
+	
+	for ($i=$calendarConf[5]; $i <= $calendarConf[6]; $i++) { 
+		echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+	}
+	
+?>
+	</tr>
+	<tr>
+<?php
+	
+	for ($i=$calendarConf[7]; $i <= $calendarConf[8]; $i++) { 
+		echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+	}
+	
+?>
+	</tr>
+<?php
+	
+	if ($calendarConf[11] == '0' OR $calendarConf[12] == '0') {
+		echo '<tr>';
+		for ($i=$calendarConf[9]; $i <= $calendarConf[10]; $i++) { 
+			echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+		}
+		for ($i=0; $i < $calendarConf[13]; $i++) { 
+			echo '<td></td>';
+		}
+		echo '</tr>';
+	}
+	else {
+		echo '<tr>';
+		for ($i=$calendarConf[9]; $i <= $calendarConf[10]; $i++) { 
+			echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+		}
+		echo '</tr>';
+		
+		echo '<tr>';
+		for ($i=$calendarConf[11]; $i <= $calendarConf[12]; $i++) { 
+			echo calendarColor($anoActual,$mesActual,$i,$sucursalTodas);
+		}
+		for ($i=0; $i < $calendarConf[13]; $i++) { 
+			echo '<td></td>';
+		}
+		echo '</tr>';
+	}
+
+?>
+	</tbody>
+</table>
